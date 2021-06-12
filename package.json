@@ -1,0 +1,27 @@
+{
+  "name": "doparata",
+  "version": "1.0.0",
+  "description": "Compares discord servers and shows a list of mutual members.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MajorGamerJay/doparata.git"
+  },
+  "keywords": [
+    "discord",
+    "script",
+    "doparata"
+  ],
+  "author": "MajorGamerJay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MajorGamerJay/doparata/issues"
+  },
+  "homepage": "https://github.com/MajorGamerJay/doparata#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
