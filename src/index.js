@@ -1,5 +1,7 @@
-const Discord = require("discord.js");
-const Colors = require('./mods/Colors.js');
 const Logging = require('./mods/Logging.js');
+const logger = new Logging.Logger(bool_fs=true);
 
-Logging.logOutput("SUCC", "NO PP", bool_fs = true);
+logger.logOutput("WARN", "Lol");
+logger.logOutput("ERR", "Nice error");
+logger.logOutput("INFO", "Ebic Info");
+logger.logOutput("SUCC", "BIG SUCC");

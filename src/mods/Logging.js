@@ -1,36 +1,40 @@
 const Colors = require('./Colors');
 
-function logOutput (type="none",
-    message,
-    bool_fs=false,
-    path="doparata.log") {
+class Logger {
+    constructor (
+        bool_fs=false,
+        path="doparata.log") {
 
-    const fs = require('fs');
-    let msg = "";
+        if (bool_fs) {
+            this.bool_fs = bool_fs;
+            this.fs = require('fs');
+            this.path = path;
+            this.fs.writeFile(path, '', err => { if (err) console.log(err) });
+        }
+    }
 
-    if (bool_fs)
-        fs.writeFile(path, '', err => { if (err) console.log(err) });
-
-    switch (type) {
-        case "INFO":
-            console.log(`${Colors.coloredOutput("CYAN", "INFO > ")} ${message}`);
-            if (bool_fs) fs.appendFile(path, `[INFO] ${message}`, err => { if (err) console.log(err) })
-            break;
-        case "WARN":
-            console.log(`${Colors.coloredOutput("YELLOW", "WARN > ")} ${message}`);
-            if (bool_fs) fs.appendFile(path, `[WARN] ${message}`, err => { if (err) console.log(err) })
-            break;
-        case "ERR":
-            console.log(`${Colors.coloredOutput("RED", "ERR > ")} ${message}`);
-            if (bool_fs) fs.appendFile(path, `[ERR] ${message}`, err => { if (err) console.log(err) })
-            break;
-        case "SUCC":
-            console.log(`${Colors.coloredOutput("GREEN", "SUCCESS > ")} ${message}`);
-            if (bool_fs) fs.appendFile(path, `[SUCCESS] ${message}`, err => { if (err) console.log(err) })
-            break;
+    logOutput(type, message) {
+        switch (type) {
+            case "INFO":
+                console.log(`${Colors.coloredOutput("CYAN", "INFO >")} ${message}`);
+                if (this.bool_fs) this.fs.appendFile(this.path, `[INFO] ${message}\n`, err => { if (err) console.log(err) })
+                break;
+            case "WARN":
+                console.log(`${Colors.coloredOutput("YELLOW", "WARN >")} ${message}`);
+                if (this.bool_fs) this.fs.appendFile(this.path, `[WARN] ${message}\n`, err => { if (err) console.log(err) })
+                break;
+            case "ERR":
+                console.log(`${Colors.coloredOutput("RED", "ERR >")} ${message}`);
+                if (this.bool_fs) this.fs.appendFile(this.path, `[ERR] ${message}\n`, err => { if (err) console.log(err) })
+                break;
+            case "SUCC":
+                console.log(`${Colors.coloredOutput("GREEN", "SUCCESS >")} ${message}`);
+                if (this.bool_fs) this.fs.appendFile(this.path, `[SUCCESS] ${message}\n`, err => { if (err) console.log(err) })
+                break;
+        }
     }
 }
 
 module.exports = {
-    logOutput : logOutput
+    Logger: Logger
 };
