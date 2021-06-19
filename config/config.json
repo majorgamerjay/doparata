@@ -1,4 +1,6 @@
 {
-    "token": "ODAyNzg4ODQ1Mzc1NzE3Mzg4.YA0VXw.BTIyxSqrkI0jxAAhQyZmNTHqn5I",
-    "write_logs": true
+    "token": "ODAyNzg4ODQ1Mzc1NzE3Mzg4.YA0VXw.rlUi4IUSEZaocBVbIUuuyy6O7iE",
+    "write_logs": true,
+    "pretty_print": true,
+    "verbose_level": 2
 }

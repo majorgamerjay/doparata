@@ -50,7 +50,6 @@ function battleRoyale(list, accum, sort=false, comparatorFunction=null) {
     /* Test the list whether it's common or not */
     for (let i = 1; i < list.length; ++i) {
         for (let j = 0; j < list[i].length; ++j) {
-            console.log(`Checking: ${pivot} and ${list[i][j]}`);
             if (pivot !== list[i][j])
                 is_common = false;
             else {
@@ -62,7 +61,6 @@ function battleRoyale(list, accum, sort=false, comparatorFunction=null) {
 
     /* Push it to accum if common */
     if (is_common === true) {
-        console.log("Common found!");
         accum.push(pivot);
     }
 
