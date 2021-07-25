@@ -11,7 +11,7 @@ Features in this program include:-
 - Can return member information verbosely.
 - Configuration and server list files in JSON.
 - Compatible for use as both bot client and user client. (See further below).
-- Pretty print or print out as JSON.
+- Pretty print (Indented+Non-JSON) or print out as JSON.
 
 ## Installation
 
